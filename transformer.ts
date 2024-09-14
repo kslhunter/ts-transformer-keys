@@ -1,8 +1,8 @@
 import ts from 'typescript';
 import path from 'path';
 
-const createArrayExpression = ts.factory ? ts.factory.createArrayLiteralExpression : ts.createArrayLiteral;
-const createStringLiteral = ts.factory ? ts.factory.createStringLiteral : ts.createLiteral;
+const createArrayExpression = ts.factory.createArrayLiteralExpression;
+const createStringLiteral = ts.factory.createStringLitera;
 
 export default function transformer(program: ts.Program): ts.TransformerFactory<ts.SourceFile> {
   return (context: ts.TransformationContext) => (file: ts.SourceFile) => visitNodeAndChildren(file, program, context);
